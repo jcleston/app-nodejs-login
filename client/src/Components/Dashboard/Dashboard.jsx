@@ -1,8 +1,11 @@
 import React from "react";
 
 const Dashboard = () => {
-    return(
-        <div>Dashboard</div>
+    return (
+        <div>
+            Página Dashboard
+            <a href="/">Log Out</a>
+        </div>
     )
 }
 
