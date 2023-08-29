@@ -1,14 +1,74 @@
-import React from "react";
+import React from "react"
 import './Login.css'
+import '../../App.css'
+import { Link, NavLink } from 'react-router-dom'
+
+import video from '../../LoginAssets/video.mp4'
+import logo from '../../LoginAssets/logo.png'
+
+import { FaUserShield } from 'react-icons/fa'
+import { BsFillShieldLockFill } from 'react-icons/bs'
+import { AiOutlineSwapRight } from 'react-icons/ai'
 
 const Login = () => {
     return (
-        <div>            
-            <a href="/register">Registro</a>
-            <br />
-            <a href="/dashboard">Dashboard</a>
-            <br />
-            Página de Login
+        <div className="loginPage flex">
+            <div className="container flex">
+
+                <div className="videoDiv">
+                    <video src={video} autoPlay muted loop></video>
+
+                    <div className="textDiv">
+                        <h2 className="title">Asd asdasd</h2>
+                        <p>asd asd</p>
+                    </div>
+
+                    <div className="footerDiv flex">
+                        <span className="text">123 456 789</span>
+                        <Link to={'/register'}>
+                            <button className="btn">Sign Up</button>
+                        </Link>
+                    </div>
+
+                </div>
+
+                <div className="formDiv flex">
+                    <div className="headerDiv">
+                        <img src={logo} alt="Logo Image" />
+                        <h3>Bem vindo!</h3>
+                    </div>
+
+                    <form action="" className="form grid">
+                        <span>Login...</span>
+                        <div className="inputDiv">
+                            <label htmlFor="username">Usuário</label>
+                            <div className="input flex">
+                                <FaUserShield className="icon" />
+                                <input type="text" id="username" placeholder="Enter password" />
+                            </div>
+                        </div>
+
+                        <div className="inputDiv">
+                            <label htmlFor="password">Password</label>
+                            <div className="input flex">
+                                <BsFillShieldLockFill className="icon" />
+                                <input type="password" id="password" placeholder="Enter Password" />
+                            </div>
+                        </div>
+
+                        <button type="submit" className="btn flex">
+                            <span>Login </span>
+                            <AiOutlineSwapRight className="icon" />
+                        </button>
+
+                        <span className="forgotPassword">
+                            Recuperar senha <a href="">Clique aqui</a>
+                        </span>
+
+                    </form>
+                </div>
+
+            </div>
         </div>
     )
 }
